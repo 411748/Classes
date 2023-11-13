@@ -18,6 +18,6 @@ void movie::mTime(int Otime){
 
 
 void movie::print(){
-  cout << "Title: " << title << endl << "Year: " << year << endl << "Publisher: " << publisher << endl << "Director: " << director << endl << "Duration: " << time << endl << endl;
+  cout << "Title: " << title << endl << "Year: " << year << endl << "Publisher: " << publisher << endl << "Director: " << director << endl << "Time: " << time << endl << endl;
   return;
 }

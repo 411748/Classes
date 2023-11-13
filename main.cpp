@@ -61,6 +61,25 @@ int main() {
 	media->mTime(iinput);
 	mediaVector.push_back(media);
       }
+      else if(strcmp(input_add, "music") == 0) {
+	music* media = new music();
+	cout << "Enter the name of the song as one word, you can use dashes or underscored if title has more than one word" << endl;
+	cin >> cinput;
+	media->mTitle(cinput);
+	cout << "What year was this song released?" << endl;
+	cin >> iinput;
+	media->mYear(iinput);
+	cout << "Who published this song?" << endl;
+	cin >> cinput;
+	media->mTitle(cinput);
+	cout << "How many seconds is this song?" << endl;
+	cin >> iinput;
+	media->mTime(iinput);
+	cout << "Who wrote this song?" << endl;
+	cin >> cinput;
+	media->mWritter(cinput);
+	mediaVector.push_back(media);
+      }
     }
     else if(strcmp(input, "SEARCH") == 0) {
       cout << "Input the title of what you want to search for: " << endl;
