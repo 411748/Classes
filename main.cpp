@@ -42,7 +42,25 @@ int main() {
 	media->mRating(iinput);
 	mediaVector.push_back(media);
       }
-      
+      else if(strcmp(input_add, "movie") == 0) {
+	movie* media = new movie();
+	cout << "Enter the title as one word, you can use dashes or underscores if title has more than one word" << endl;
+	cin >> cinput;
+	media->mTitle(cinput);
+	cout << "What year was this movie made in?" << endl;
+	cin >> iinput;
+	media->mYear(iinput);
+	cout << "Who published this movie?" << endl;
+	cin >> cinput;
+	media->mPublisher(cinput);
+	cout << "Who directed this movie?" << endl;
+	cin >> cinput;
+	media->mDirector(cinput);
+	cout << "How long is this movie in minutes?" << endl;
+	cin >> iinput;
+	media->mTime(iinput);
+	mediaVector.push_back(media);
+      }
     }
     else if(strcmp(input, "SEARCH") == 0) {
       cout << "Input the title of what you want to search for: " << endl;
