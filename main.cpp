@@ -6,27 +6,41 @@
 #include "music.h"
 #include "movies.h"
 
+// 11/12/2023
+// Nick Braun
+// Classes - User can either ADD, SEARCH, DELETE, or QUIT with the options for movies, music, or video games.
+
+
 using namespace std;
 
+//Main function
 int main() {
+  //Defulted to not quit
   bool quit = false;
   char input[SIZE];
   char input_add[SIZE];
   char input_search[SIZE];
   char input_delete[SIZE];
   char cinput[SIZE];
-  int iinput; 
-  vector<media*> mediaVector; 
+  int iinput;
+  //Introducing vector
+  vector<media*> mediaVector;
+  //Continues untill user says "QUIT"
   while(!quit) {
+    //Gives 4 options
     cout << "Enter what you want to do (ADD/SEARCH/DELETE/QUIT)" << endl;
     cin >> input;
+    //User wants to quit
     if(strcmp(input, "QUIT") == 0) {
       quit = true;
     }
+    //User wants to add
     else if(strcmp(input, "ADD") == 0) {
       cout << "Input what you would like to add (vgame, music, or movie)" << endl;
       cin >> input_add;
+      //User wants to add video game
       if(strcmp(input_add, "vgame") == 0) {
+	//Asking for the info that they want to add
 	vGame* media = new vGame();
 	cout << "Enter the title as one word, you can use dashes or underscores if title has more than one word" << endl;
 	cin >> cinput;
@@ -42,7 +56,9 @@ int main() {
 	media->mRating(iinput);
 	mediaVector.push_back(media);
       }
+      //User wants to add movie
       else if(strcmp(input_add, "movie") == 0) {
+	//Asking for the info that they want to add
 	movie* media = new movie();
 	cout << "Enter the title as one word, you can use dashes or underscores if title has more than one word" << endl;
 	cin >> cinput;
@@ -61,7 +77,9 @@ int main() {
 	media->mTime(iinput);
 	mediaVector.push_back(media);
       }
+      //User wants to add music
       else if(strcmp(input_add, "music") == 0) {
+	//Asking for the info that they want to add
 	music* media = new music();
 	cout << "Enter the name of the song as one word, you can use dashes or underscored if title has more than one word" << endl;
 	cin >> cinput;
@@ -81,7 +99,9 @@ int main() {
 	mediaVector.push_back(media);
       }
     }
+    //User wants to search
     else if(strcmp(input, "SEARCH") == 0) {
+      //Finding the thing and printing
       cout << "Input the title of what you want to search for: " << endl;
       cin >> input_search;
       for(int i = 0; i < mediaVector.size(); i++) {
@@ -90,7 +110,9 @@ int main() {
 	}
       }
     }
+    //User wants to delete
     else if(strcmp(input, "DELETE") == 0) {
+      //Finding the thing and deleting 
       cout << "Input the title of what you want to delete: " << endl;
       cin >> input_delete;
       for(int i = 0; i < mediaVector.size(); i++) {

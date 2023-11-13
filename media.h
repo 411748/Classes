@@ -1,3 +1,4 @@
+//Had help from my dad with the ifndef and define
 #ifndef __media_h
 #define __media_h
 
@@ -5,8 +6,10 @@
 #include <cstring>
 using namespace std;
 
-const int SIZE = 30;
+//Code for media.h
+const int SIZE = 50;
 
+//All Options have these Items
 class media{
  public:
   void mTitle(char* Otitle);

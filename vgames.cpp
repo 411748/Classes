@@ -2,6 +2,7 @@
 #include <cstring>
 #include "vgames.h"
 
+//Code for vgames.cpp
 using namespace std;
 
 void vGame::mRating(int Orating) {

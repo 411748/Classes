@@ -2,6 +2,7 @@
 #include <cstring>
 #include "music.h"
 
+//Code for music.cpp
 using namespace std;
 
 void music::mTime(int Otime){

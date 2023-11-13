@@ -2,8 +2,10 @@
 #include <cstring>
 #include "media.h"
 
+//Code for music.h
 using namespace std;
 
+//Adding items not in media
 class music : public media{
  public:
   void mTime(int Otime);

@@ -2,6 +2,7 @@
 #include <cstring>
 #include "media.h"
 
+//Code for media.cpp
 using namespace std;
 
 void media::mTitle(char* Otitle) {
