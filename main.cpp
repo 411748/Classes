@@ -102,23 +102,55 @@ int main() {
     //User wants to search
     else if(strcmp(input, "SEARCH") == 0) {
       //Finding the thing and printing
-      cout << "Input the title of what you want to search for: " << endl;
+      cout << "Input if you want to search by title or by year(title or year)" << endl;
       cin >> input_search;
-      for(int i = 0; i < mediaVector.size(); i++) {
-	if(mediaVector[i]->compare_Title(input_search) == true) {
-	  mediaVector[i]->print();
+      if(strcmp(input_search, "title") == 0){
+	char input_title[SIZE];
+	cout << "Enter the title as one word, use dashes or underscores if the title has more than one word" << endl;
+	cin >> input_title;
+	for(int i = 0; i < mediaVector.size(); i++) {
+	  if(mediaVector[i]->compare_Title(input_title) == true) {
+	    mediaVector[i]->print();
+	  }
 	}
       }
+      else if(strcmp(input_search, "year") == 0) {
+	int int_year;
+	cout << "Enter the year you want to search for:" << endl;
+	cin >> int_year;
+	for(int i = 0; i < mediaVector.size(); i++) {
+	  if(mediaVector[i]->compare_Year(int_year) == true) {
+	    mediaVector[i]->print();
+	  }
+        } 
+      }
     }
+  
     //User wants to delete
     else if(strcmp(input, "DELETE") == 0) {
       //Finding the thing and deleting 
-      cout << "Input the title of what you want to delete: " << endl;
+      cout << "Enter if you want to delete by year or title(title or year)" << endl;
       cin >> input_delete;
-      for(int i = 0; i < mediaVector.size(); i++) {
-	if(mediaVector[i]->compare_Title(input_delete) == true) {
-	  delete mediaVector.at(i);
-	  mediaVector.erase(mediaVector.begin() + i);
+      if(strcmp(input_delete, "title") == 0) {
+	char input_title[SIZE];
+	cout << "Enter the title you want to delete:" << endl;
+	cin >> input_title;
+	for(int i = 0; i < mediaVector.size(); i++) {
+	  if(mediaVector[i]->compare_Title(input_title) == true) {
+	    delete mediaVector.at(i);
+	    mediaVector.erase(mediaVector.begin() + i);
+	  }
+	}
+      }
+      else if(strcmp(input_delete, "year") == 0) {
+	int int_year;
+	cout << "Enter the year you want to delete from: " << endl;
+	cin >> int_year;
+	for(int i =0; i < mediaVector.size(); i++) {
+	  if(mediaVector[i]->compare_Year(int_year) == true) {
+	    delete mediaVector.at(i);
+	    mediaVector.erase(mediaVector.begin() + i);
+	  }
 	}
       }
     }

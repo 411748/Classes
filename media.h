@@ -16,6 +16,7 @@ class media{
   void mYear(int year);
   void mPublisher(char* Opublisher);
   bool compare_Title(char* input_compare);
+  bool compare_Year(int input_compare);
   char title[SIZE];
   char publisher[SIZE];
   int year;

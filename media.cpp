@@ -31,6 +31,14 @@ bool media::compare_Title(char* input_compare) {
     return false;
   }
 }
+bool media::compare_Year(int input_compare) {
+  if(input_compare == year) {
+    return true;
+  }
+  else {
+    return false;
+  }
+}
 
 void media::print() {
   cout << "You should never see this message" << endl;  
