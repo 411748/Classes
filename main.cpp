@@ -90,9 +90,15 @@ int main() {
 	}
       }
     }
-    //else if(strcmp(input, "DELETE") == 0) {
-      //cout << "Input the title of what you want to delete: " << endl;
-      //cin >> input_delete;
-    //}
+    else if(strcmp(input, "DELETE") == 0) {
+      cout << "Input the title of what you want to delete: " << endl;
+      cin >> input_delete;
+      for(int i = 0; i < mediaVector.size(); i++) {
+	if(mediaVector[i]->compare_Title(input_delete) == true) {
+	  delete mediaVector.at(i);
+	  mediaVector.erase(mediaVector.begin() + i);
+	}
+      }
+    }
   }
 }
